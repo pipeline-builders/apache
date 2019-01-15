@@ -12,22 +12,13 @@ provisioner:
 verifier:
   name: inspec
 
-transport:
-  name: winrm
-  elevated: true
-  username: tomcat
-  password: tomcat
-
 platforms:
-  - name: windows-2012R2
-    driver:
-      customize:
-        memory: 4096
+  - name: centos-6.9
 
 suites:
   - name: default
     run_list:
-      - recipe[apache::blank]
+      - recipe[apache::default]
     verifier:
       inspec_tests:
         - test/integration/default

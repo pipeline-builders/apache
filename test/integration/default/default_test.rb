@@ -10,5 +10,5 @@ describe port(80) do
 end
 
 describe command('curl http://localhost') do
-  its(stdout) { should match(/HALL/) }
+  its('stdout') { should match(/HALL/) }
 end

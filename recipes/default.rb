@@ -3,12 +3,12 @@
 # Recipe:: default
 #
 # Copyright:: 2019, The Authors, All Rights Reserved.
-package "apache2"
+package "httpd"
 
 file '/var/www/html/index.html' do
   content "HALLELUJAH"
 end
 
-service 'apache2' do
+service 'httpd' do
   action [ :enable, :start ]
 end
